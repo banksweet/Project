@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Test Toggle</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <link href="css/bootstrap-glyphicons.css" rel="stylesheet">
+
+
+ <link href="http://fonts.googleapis.com/css?family=Arimo:400" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand glyphicon glyphicon-menu-hamburger" href="#menu-toggle" id="menu-toggle"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="index.html">LOGO</a>
+    </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+<!--
+        <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+-->
+        <a href="#" data-toggle="modal" data-target="#login-modal">Logout</a>
+    </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+<!--
+                <li class="sidebar-brand">
+                    <a href="#">
+                        LOGO
+                    </a>
+                </li>
+                <li>
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Dashboard</a>
+                </li>
+                <ul id="collapseOne" class="panel-collapse collapse in">
+                    <a href="#">1</a><br>
+                    <a href="#">2</a><br>
+                    <a href="#">3</a><br>
+                </ul>
+ 
+-->
+<!--list menu bar
+       
+            <li>
+                <a class="#" data-toggle="collapse" href="#menu">Register</a>
+            </li>
+            <div class="collapse menu" id="menu">
+                <ul id="collapseOne" class="panel-collapse collapse in">
+                    <a href="#">1</a><br>
+                    <a href="#">2</a><br>
+                    <a href="#">3</a><br>
+                </ul>
+            </div>
+ -->
+<!--list menu bar on js hiddens -->
+            <li>
+                <a href="#" onclick="toggler('myContent');">Register</a>
+            <li>
+            <ul id="myContent" class='hiddens'>
+              <a href="#">this is a test #1 </a>
+            </ul> 
+                
+            
+                 <a href="#" onclick="javascript:toggler('myContentt');">Dashboard</a>
+             
+                <ul id="myContentt" class='hiddens'>
+                <a href="#">this is a test #2</a>
+            </ul>
+            <li>
+                <a href="opd.html">Opd</a>
+            </li>
+            <li>
+                <a href="exam.html">Exam</a>
+            </li>
+            <li>
+                <a href="blood.html">Result LAB</a>
+            </li>
+
+            <li>
+                <a href="#">Appointment</a>
+            </li>
+             <li>
+                <a href="#">History</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+<!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+<!--
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper           
+                  
+    </div>
+    <!-- /#wrapper 
+
+-->
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                    <h3>LOGIN</h3>
+                </div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+                        <div class="modal-body">
+                            <div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Username</span>
+                            </div>
+                                <input id="login_username" class="form-control" type="text" placeholder="Username " required><br>
+                            <div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                 <span id="text-login-msg">Password</span>
+                            </div>
+
+                            <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+                            <div class="register">
+                                <a href="#">Register</a>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+                        
+                        <div class="modal-footer">
+                            <div>
+                                <a>Register</a>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Register Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+            </div>
+        </div>
+    </div>
+
+
+
+<!--info no slide-->
+<div class="container">
+    <h3 class="well">Physical Exam Checklist</h3>
+    <div class="col-lg-12 well">
+    <div class="row">
+                
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="container-fluid row">
+                        <div class="col-md-6">
+                             Name <input class="form-control" type="text" required>
+                        </div>
+                        <div class="col-md-6">
+                            Owner <input class="form-control" type="text" required>
+                        </div><br>
+                         <div class="col-md-6">
+                            Diet <input class="form-control" type="text" required>
+                        </div>
+                             <div class="col-md-6">
+                            Vax <input class="form-control" type="text" required>
+                        </div>
+                        <div class="col-md-6">
+                            Fecal <input class="form-control" type="text" required>
+                        </div>
+                        <div class="col-md-6">
+                            Heartworm <input class="form-control" type="text" required>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+
+
+<table class="table table-responsive">
+     <form>
+        <tr>
+            <div class="radiotext col-md-4">
+            
+                <label>General Appearance</label>
+                <div class="radio">
+                    <label><input type="radio" name="GeneralAppearance" value="normal">Normal</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="GeneralAppearance" value="abnormal">Abnormal</label>
+                </div>
+            
+                <div class="radiotext ">
+                    
+                    <label>Integumentary</label>
+                    <div class="radio">
+                        <label><input type="radio" id='normal' name="Integumentary" value="normal">Normal</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" id='abnormal' name="Integumentary" value="anormal">Abnormal</label>
+                    </div>
+                
+                </div>
+
+                <div class="radiotext ">
+                    <form>
+                    <label>Musculo-Skeletal</label>
+                    <div class="radio">
+                        <label><input type="radio" id='normal' name="optradio">Normal</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+            <div class="radiotext col-md-4">
+                <form>
+                <label>Respiratory</label>
+                <div class="radio">
+                    <label><input type="radio" id='normal' name="optradio">Normal</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                </div>
+            </form>
+
+                <div class="radiotext ">
+                    <form>
+                    <label>Digestive</label>
+                    <div class="radio">
+                        <label><input type="radio" id='normal' name="optradio">Normal</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                    </div>
+                </form>
+                </div>
+
+                <div class="radiotext ">
+                    <form>
+                    <label>Genito-Urinary</label>
+                    <div class="radio">
+                        <label><input type="radio" id='normal' name="optradio">Normal</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+            <div class="radiotext col-md-3">
+                <form>
+                <label>Eyes</label>
+                <div class="radio">
+                    <label><input type="radio" id='normal' name="optradio">Normal</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                </div>
+            </form>
+
+                <div class="radiotext ">
+                <form>
+                    <label>Ears</label>
+                    <div class="radio">
+                        <label><input type="radio" id='normal' name="optradio">Normal</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                    </div>
+                </form>
+                </div>
+
+                <div class="radiotext ">
+                <form>
+                    <label>Neural System</label>
+                    <div class="radio">
+                        <label><input type="radio" id='normal' name="optradio">Normal</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                    </div>
+                </form>
+                </div>
+
+
+            </div>
+
+            <div class="radiotext col-md-4">
+                <form>
+                <label>Lymph Nodes</label>
+                <div class="radio">
+                    <label><input type="radio" id='normal' name="optradio">Normal</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                </div>
+                </form>
+
+                
+
+                <div class="radiotext ">
+                    <form>
+                    <label>Mucous Membranes</label>
+                    <div class="radio">
+                        <label><input type="radio" id='normal' name="optradio">Normal</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+            <div class="radiotext col-md-4">
+                <form>
+                <label>Circulatory</label>
+                <div class="radio">
+                    <label><input type="radio" id='normal' name="optradio">Normal</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                </div>
+            </form>
+                
+            </div>
+            <div class="radiotext col-md-3">
+                <form>
+                    <label>Dental</label>
+                    <div class="radio">
+                        <label><input type="radio" id='normal' name="optradio">Normal</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" id='abnormal' name="optradio">Abnormal</label>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+    <div class="col-md-12">
+        <tr>
+            <div class="col-md-6">
+                <label>BT :</label>
+                <input class="form-control" type="text" name="bt" id="bt"required>
+            </div>  
+            <div class="col-md-6">
+                <label>HR :</label>
+               <input class="form-control" type="text" name="hr" id="hr" required>
+            </div>
+            <div class="col-md-6">
+                <label>RR :</label>
+                    <input class="form-control" type="text" name="rr" id="rr" required>
+            </div> 
+            <div class="col-md-6">
+                <label>WT :</label>
+                    <input class="form-control" type="text" name="wt" id="wt" required>
+            </div> 
+        </tr>
+    </div>
+
+
+
+    </tr>
+   
+  </form>
+</table>
+</div>
+    <button type="submit" class="btn btn-lg btn-info aa">ยืนยัน</button>
+    </div>
+</div>
+
+
+
+
+
+
+<!--
+
+<div class="container info">
+    dsfsdf
+</div>
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/sub.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
